@@ -46,7 +46,7 @@ channels {
 // SKIP
 
 SPACE              : [ \t\r\n]+     -> channel(HIDDEN);
-SPEC_MYSQL_COMMENT : '/*!' .+? '*/' -> channel(MYSQLCOMMENT);
+SPEC_MYSQL_COMMENT : '/*!' .+? '*/' -> channel(HIDDEN);
 COMMENT_INPUT      : '/*' .*? '*/'  -> channel(HIDDEN);
 LINE_COMMENT:
     (('--' [ \t]* | '#') ~[\r\n]* ('\r'? '\n' | EOF) | '--' ('\r'? '\n' | EOF)) -> channel(HIDDEN)
